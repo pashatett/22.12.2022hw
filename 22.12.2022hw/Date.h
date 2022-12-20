@@ -114,4 +114,17 @@ public:
 		month = a.month;
 		year = a.year;
 	}
+	friend ostream& operator<<(ostream& output, Date& d) {
+		output << "day: " << d.day << endl
+			<< "month: " << d.month << endl
+			<< "year: " << d.year << endl;
+		return output;
+	}
+
+	friend istream& operator>>(istream& input, Date& d) {
+		input >> d.day;
+		input >> d.month;
+		input >> d.year;
+		return input;
+	}
 };
